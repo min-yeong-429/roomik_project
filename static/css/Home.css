@@ -3,18 +3,19 @@
   font-family: Pretendard, "Noto Sans KR", sans-serif;
   /* box-sizing: border-box; */
 }
+
 body {
   margin-top: 0px;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
 }
+
 #wrapper {
   max-width: 375px;
   height: 734px;
   margin: 0 auto;
   background-color: #ffffff;
-  padding-left: 24px;
   overflow: auto;
   /* 그전에 사용한 가운데 정렬 코드(지금은 사용 안함)
     justify-content: center;
@@ -30,8 +31,13 @@ body {
 footer {
   width: 375px;
   height: 78px;
+  margin: 0 auto;
+  position: relative;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: #ffffff;
 }
-/* @@ -37,83 +41,373 @@ footer { */
+
 header img {
   width: 113.77551px;
   height: 25px;
@@ -49,13 +55,10 @@ header img {
   align-items: center;
 }
 
-.user-mood_column {
 .user-mood__column {
   display: flex;
   flex-direction: column;
 }
-
-
 
 .text {
   display: flex;
@@ -64,27 +67,15 @@ header img {
   flex-direction: column;
 }
 
-.first-line :last-child{
-  display: block;
-}
-.user-name {
-
-}
-
-
 .mood-select-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E1F7FC;
   background-color: #e1f7fc;
   width: 124px;
   height: 40px;
-  border: #C5EDF6;
   border: #c5edf6;
   border-radius: 40px;
-  margin-right: 24px;
-  margin-left: 56px;
 }
 
 .mood-select-btn :first-child {
@@ -92,12 +83,8 @@ header img {
   font-weight: 500;
 }
 
-
-
 .mood-select-btn :last-child {
   font-size: 8px;
-  padding-left: 14px;
-  color: #B3E4EF;
   margin-left: 14px;
   color: #b3e4ef;
 }
@@ -110,7 +97,6 @@ header img {
   margin-bottom: 31px;
 }
 
-.btn-list_btn {
 .btn-list__btn {
   display: flex;
   flex-direction: column;
@@ -118,26 +104,19 @@ header img {
   height: 83px;
   border: 1px solid #e9e9e9;
   border-radius: 16px;
-  border-color: #E9E9E9;
-  justify-content: center;
   justify-content: space-between;
   align-items: center;
 }
 
-.btn-list_btn img {
 .btn-list__btn img {
   margin-top: 20px;
   width: 24px;
-  height: 23px;
   height: 24px;
 }
 
-.btn-list_btn span {
 .btn-list__btn span {
   font-size: 11px;
   font-weight: 500;
-  height: 23px;
-  margin-top: 22px;
   margin-bottom: 15px;
 }
 
@@ -381,7 +360,7 @@ header img {
 .calendar-title__btn span {
   font-size: 10px;
   font-weight: 500;
-  color: #2D2D2D;
+  color: #2d2d2d;
 }
 
 .calendar {
@@ -394,14 +373,14 @@ header img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #4512B0;
+  background-color: #4512b0;
   width: 41px;
   height: 66px;
   border-radius: 4px;
 }
 
 .calendar-date__selected span {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 15px;
   font-weight: 400;
 }
@@ -422,7 +401,7 @@ header img {
 }
 
 .calendar-date span {
-  color: #ACACAC;
+  color: #acacac;
   font-size: 15px;
   font-weight: 400;
 }

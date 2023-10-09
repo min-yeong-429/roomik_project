@@ -12,7 +12,209 @@
     <title>roomik</title>
   </head>
   <body>
-    <div id="wrapper"></div>
+    <div id="wrapper">
+      <!-- header 규격 설정 -->
+      <div id="header">
+        <p id="header_left">카테고리</p>
+        <div id="header_right">
+          <a href="#">
+            <img
+              src="../static/images/communityglass.png"
+              width="25px"
+              height="23px"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- header 규격 설정 -->
+
+      <!-- 공지사항 규격 설정 -->
+      <div id="content1">
+        <div class="slider">
+          <a href="#">
+            <img
+              src="../static/images/announcement1.png"
+              alt="공지사항 1"
+              width="375px"
+              height="228px"
+              class="active"
+              id="announce1"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="../static/images/announcement2.png"
+              alt="공지사항 2"
+              width="375px"
+              height="228px"
+              id="announce2"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="../static/images/announcement3.png"
+              alt="공지사항 3"
+              width="375px"
+              height="228px"
+              id="announce3"
+            />
+          </a>
+
+          <div class="slider-button">
+            <button
+              id="b1"
+              class="off"
+              onclick="showImageById('announce1', 'b1')"
+            ></button>
+            <button
+              id="b2"
+              class="off"
+              onclick="showImageById('announce2', 'b2')"
+            ></button>
+            <button
+              id="b3"
+              class="off"
+              onclick="showImageById('announce3', 'b3')"
+            ></button>
+          </div>
+        </div>
+        <script>
+          const slider = document.querySelector(".slider");
+          const images = slider.querySelectorAll("img");
+          const buttons = slider.querySelectorAll(".slider-button button");
+
+          function showImageById(imageId, buttonId) {
+            const targetIndex = Array.from(images).findIndex(
+              (img) => img.id === imageId
+            ); // 타겟 이미지의 인덱스 가져오기
+
+            images.forEach((img) => {
+              img.classList.remove("active");
+            });
+
+            buttons.forEach((button) => {
+              button.classList.remove("on");
+            });
+
+            const image = document.getElementById(imageId);
+            const button = document.getElementById(buttonId);
+
+            image.classList.add("active");
+            button.classList.add("on");
+            currentImageIndex = targetIndex; // 타겟 이미지 인덱스로 업데이트
+          }
+
+          let currentImageIndex = 0;
+
+          function showImage(index) {
+            images.forEach((img, idx) => {
+              img.classList.remove("active");
+              buttons[idx].classList.remove("on");
+
+              if (idx === index) {
+                img.classList.add("active");
+                buttons[idx].classList.add("on");
+              }
+            });
+          }
+
+          function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+          }
+
+          showImage(currentImageIndex);
+          setInterval(nextImage, 2500);
+        </script>
+      </div>
+      <!-- 공지사항 규격 설정 -->
+
+      <hr />
+
+      <!-- 카테고리 버튼 규격 설정 -->
+
+      <div id="content2">
+        <div class="button-container">
+          <button class="button button-clicked" onclick="changeColor(this)">
+            전체 게시판
+          </button>
+          <button class="button" onclick="changeColor(this)">
+            잡담 나눠요
+          </button>
+          <button class="button" onclick="changeColor(this)">
+            부탁 드려요
+          </button>
+          <button class="button" onclick="changeColor(this)">
+            룸메 찾아요
+          </button>
+          <button class="button" onclick="changeColor(this)">같이 해요</button>
+        </div>
+      </div>
+      <script>
+        function changeColor(button) {
+          // 클릭된 버튼의 배경색과 글자색 변경
+          button.style.backgroundColor = "#5617db";
+          button.style.color = "#fff";
+
+          // 모든 버튼에서 다른 버튼들의 스타일 초기화
+          var buttons = document.querySelectorAll(".button");
+          buttons.forEach(function (btn) {
+            if (btn !== button) {
+              btn.style.backgroundColor = "#fff";
+              btn.style.color = "#8b8b8b";
+            }
+          });
+        }
+      </script>
+      <!-- 카테고리 버튼 규격 설정 -->
+
+      <!-- 카테고리 더보기 설정-->
+      <div id="content3"></div>
+      <!-- 카테고리 더보기 설정 -->
+
+      <!-- 네비게이션 바 규격 설정 -->
+      <div class="menu">
+        <div class="menu-details">
+          <li class="homebtn">
+            <a href="./Home.html">
+              <img
+                src="../static/images/todaybtn2.png"
+                alt="투데이 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="matebtn">
+            <a href="./Mate.html">
+              <img
+                src="../static/images/matebtn2.png"
+                alt="메이트 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="communitybtn">
+            <a href="./Community.html"
+              ><img
+                src="../static/images/communitybtn1.png"
+                alt="커뮤니티 화면 버튼"
+                width="41px"
+                height="44px"
+            /></a>
+          </li>
+          <li class="profilebtn">
+            <a href="./Profile.html"
+              ><img
+                src="../static/images/profilebtn2.png"
+                alt="프로필 화면 버튼"
+                width="31px"
+                height="44px"
+            /></a>
+          </li>
+        </div>
+      </div>
+      <!-- 네비게이션 바 규격 설정 -->
+    </div>
     <!-- <script src="../static/js/Splash.js"></script> -->
   </body>
 </html>
